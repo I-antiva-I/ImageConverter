@@ -1,0 +1,76 @@
+/* https://stackoverflow.com/questions/10898399/using-variables-in-qt-stylesheets */
+
+
+
+#MAIN_PANEL
+{
+    background:                 @color-black-medium;
+}
+
+
+MyPanel
+{
+    background:                 @color-black-medium;
+    border-top:                 none;
+    padding:                    4px 4px;
+}
+
+MyPanelLabeled
+{
+    background:                 @color-black-medium;
+    border:                     @border-narrow @color-black-light;
+    color:                      @color-white-light;
+
+    font:                       @font-header;
+
+    margin-top:                 12px;
+    padding:                    12px 6px 6px 6px;
+}
+
+MyPanelLabeled:title
+{
+    subcontrol-origin:          border;
+    subcontrol-position:        top left;
+
+    left:                       18px;
+    top:                        -12px;
+
+    padding:                    0px 8px;
+}
+
+QPushButton
+{
+    min-width:                  128px;
+    min-height:                 32px;
+
+    font:                       @font-button;
+
+    background:                 @color-black-light;
+    border:                     none;
+    color:                      @color-white-light;
+}
+
+QPushButton:hover
+{
+    background:                 @color-blue-light;
+    color:                      @color-white-light;
+}
+
+QPushButton:pressed
+{
+    background:                 @color-white-light;
+    color:                      @color-blue-light;
+}
+
+QTextEdit
+{
+    background:                 @color-white-light;
+    border:                     @border-narrow @color-gray-light;
+    color:                      @color-black-dark;
+
+    font:                       @font-edit;
+
+    padding:                    4px 4px;
+}
+
+
