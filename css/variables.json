@@ -1,0 +1,37 @@
+{
+  "@font-default"           : "400 16px 'Bahnschrift'",
+  "@font-button"            : "400 16px 'Bahnschrift'",
+  "@font-header"            : "500 20px 'Bahnschrift'",
+  "@font-edit"              : "400 18px 'Bahnschrift'",
+
+
+  "@border-narrow"          : "2px SOLID",
+  "@border-medium"          : "3px SOLID",
+  "@border-wide"            : "4px SOLID",
+
+  "@color-black-dark"       : "#000000",
+  "@color-black-medium"     : "#212121",
+  "@color-black-light"      : "#424242",
+
+  "@color-gray-dark"        : "#696969",
+  "@color-gray-medium"      : "#808080",
+  "@color-gray-light"       : "#C0C0C0",
+
+  "@color-white-dark"       : "#DCDCDC",
+  "@color-white-medium"     : "#EAEAEA",
+  "@color-white-light"      : "#FFFFFF",
+
+  "@color-blue-dark"        : "#191970",
+  "@color-blue-medium"      : "#4169D1",
+  "@color-blue-light"       : "#1E90EE",
+
+  "@color-yellow-dark"      : "#D2691E",
+  "@color-yellow-medium"    : "#DAA520",
+  "@color-yellow-light"     : "#EEC700",
+
+  "@color-red-dark"         : "#A22222",
+  "@color-red-medium"       : "#DC143C",
+  "@color-red-light"        : "#EE0000",
+
+  "@color-transparent"      : "transparent"
+}
