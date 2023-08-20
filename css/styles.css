@@ -1,10 +1,16 @@
 /* https://stackoverflow.com/questions/10898399/using-variables-in-qt-stylesheets */
 
-
-
 #MAIN_PANEL
 {
     background:                 @color-black-medium;
+    padding:                    12px 6px 6px 6px;
+}
+
+#PANEL_OPTIONS,
+#PANEL_CONVERSION
+{
+    padding:                    20px 16px 16px 16px;
+
 }
 
 
@@ -35,6 +41,7 @@ MyPanelLabeled:title
     left:                       18px;
     top:                        -12px;
 
+
     padding:                    0px 8px;
 }
 
@@ -62,15 +69,62 @@ QPushButton:pressed
     color:                      @color-blue-light;
 }
 
-QTextEdit
+
+
+MyCheckBox
 {
-    background:                 @color-white-light;
-    border:                     @border-narrow @color-gray-light;
-    color:                      @color-black-dark;
+    color:                      @color-white-light;
 
-    font:                       @font-edit;
 
-    padding:                    4px 4px;
+    bo1rder: 1px dashed white;
 }
 
 
+
+MyCheckBox[currentState="true"] MyLabel
+{
+    border: 2px solid @color-blue-medium;
+}
+
+MyCheckBox[currentState="false"] MyLabel
+{
+    border: 2px solid @color-red-medium;
+}
+
+MyCheckBox[currentState="true"] MyIcon
+{
+    border: 2px solid @color-blue-medium;
+}
+
+MyCheckBox[currentState="false"] MyIcon
+{
+    border: 2px solid @color-red-medium;
+}
+
+
+
+MyCheckBox MyIcon
+{
+    background:                 @color-black-light;
+    border :2px solid @color-gray-dark;
+    border-radius: 4px;
+}
+
+MyCheckBox MyLabel
+{
+    background:                 @color-black-light;
+    color:                      @color-white-light;
+    padding:                    0px 4px;
+    font:                       @font-button;
+    border:                     2px solid @color-gray-dark;
+    border-radius:              4px;
+
+}
+
+
+MyLabel
+{
+    border :1px dashed @color-red-dark;
+    color:                      @color-white-light;
+    font:                       @font-header;
+}
