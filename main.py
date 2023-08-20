@@ -1,22 +1,21 @@
-# (?) Imports
-import ctypes
-from tkinter import *
+import sys
+import time
 
-from classes.controller import Controller
-from utility.setup_gui import prepare as prepare_gui
-from utility.setup_logic import prepare as prepare_logic
+from PyQt5 import QtWidgets
+
+from components.MyMainWindow import MyMainWindow
 
 
-def launch():
-    ctypes.windll.shcore.SetProcessDpiAwareness(1)
+def launchApp():
+    app = QtWidgets.QApplication(sys.argv)
+    mainWindow = MyMainWindow()
 
-    root = Tk()
-    controller = Controller()
+    # mainWindowController = MainWindowController(mainWindow)
+    # mainWindowController.connectFunctions()
 
-    prepare_logic(prepare_gui(root),controller)
-
-    root.mainloop()
+    mainWindow.show()
+    sys.exit(app.exec_())
 
 
 if __name__ == '__main__':
-    launch()
+    launchApp()
