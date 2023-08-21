@@ -1,6 +1,12 @@
 import json
+import re
 
 from PyQt5.QtWidgets import QWidget
+
+
+def filterStings(pattern, strings):
+    print(pattern, strings)
+    return filter(re.compile(pattern).match, strings)
 
 
 def applyCSS(widget: QWidget):
@@ -16,3 +22,4 @@ def applyCSS(widget: QWidget):
         stringCSS = stringCSS.replace(key, value)
 
     widget.setStyleSheet(stringCSS)
+
