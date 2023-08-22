@@ -99,6 +99,7 @@ class MyMainWindow(QtWidgets.QMainWindow):
 
         # Panel with "conversion" widgets
         panelConversion = MyPanelLabeled(name="PANEL_CONVERSION", label="Convert", layout=QtWidgets.QVBoxLayout())
+        panelConversion.layout().setSpacing(0)
 
         # Format selector
         panelFormats = MyPanelLabeled(name="PANEL_FORMATS", label="Formats")
@@ -118,38 +119,29 @@ class MyMainWindow(QtWidgets.QMainWindow):
         pathSelectorDestination = MyPathSelector()
         panelPathDestination.place(pathSelectorDestination)
 
-        # Placeholder
-        placeholder = MyPanel()
-        print(placeholder.setMinimumSize(0,0))
-        panelConversion.layout().setSpacing(0)
-        print(panelConversion.layout().spacing())
-        placeholder.setSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding)
-        placeholder.setStyleSheet("bord1er: 2px dashed white; margin: 0px; padding: 0px;")
+        # Separator - space between status + convert button and other components
+        separator = MyPanel()
+        separator.setSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding)
 
+        #  Panel with "convert" button and status panel
+        panelControl = MyPanel(name="PANEL_CONTROL", layout=QtWidgets.QHBoxLayout())
+        panelControl.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
         # Convert button
         buttonConvert = MyPushButton(name="BUTTON_CONVERT", text=" Convert", iconPathDefault="./images/buttons/convert.svg")
         buttonConvert.setSizePolicy(QSizePolicy.Maximum, QSizePolicy.Preferred)
-
-        #  Panel with "convert" button and status
-        panelControl = MyPanel(name="PANEL_CONTROL", layout=QtWidgets.QHBoxLayout())
-        panelControl.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
-        print("?",panelControl.getContentsMargins())
+        # Status panel
         panelStatus = MyPanelLabeled(name="PANEL_STATUS", label="Status", layout=QtWidgets.QHBoxLayout())
         panelStatus.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
-        labelStatus = MyStatusLabel()
-
-        panelControl.placeAll(panelStatus, buttonConvert)
+        labelStatus = MyStatusLabel(text="Welcome!")
+        # Placement
         panelStatus.place(labelStatus)
-
-        #
-        menu = QtWidgets.QMenu()
-        menu.addMenu("X")
+        panelControl.placeAll(panelStatus, buttonConvert)
 
         # Placement of "conversion" widgets
         panelConversion.placeAll(panelFormats,
                                  panelPathSource,
                                  panelPathDestination,
-                                 placeholder,
+                                 separator,
                                  panelControl)
 
         # Placement (panelOptions+panelConversion)
