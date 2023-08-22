@@ -9,18 +9,19 @@ from utility.enums import DialogMode
 
 
 class MyPathSelector(MyPanel):
-    def __init__(self, name=None, dialogMode=DialogMode.FILE):
+    def __init__(self, name=None, dialogMode=DialogMode.DIRECTORY):
         super(MyPathSelector, self).__init__(name, layout=QtWidgets.QHBoxLayout())
 
         # File dialog button
         self.dialogMode = dialogMode
-        self.dialogButton = MyPushButton(text="Path")
+        self.dialogButton = MyPushButton(text=" Path", iconPathDefault="./images/buttons/compass")
         self.dialogButton.clicked.connect(self.onDialogButtonClicked)
+
         self.nameFilterOptions = ""
 
         # Controls for line edit
-        clearButton = MyPushButton(text="DELETE")
-        pasteButton = MyPushButton(text="PASTE")
+        clearButton = MyPushButton(text=" Clear", iconPathDefault="./images/buttons/clear")
+        pasteButton = MyPushButton(text=" Paste", iconPathDefault="./images/buttons/paste")
         clearButton.clicked.connect(self.onClearButtonClicked)
         pasteButton.clicked.connect(self.onPasteButtonClicked)
 
@@ -31,6 +32,9 @@ class MyPathSelector(MyPanel):
 
         # Placement
         self.placeAll(self.dialogButton, self.pathLineEdit, clearButton, pasteButton)
+
+    def setDialogMode(self, dialogMode):
+        self.dialogMode = dialogMode
 
     def resetNameFilterOptions(self, label, extensions):
         if extensions is None:
@@ -54,7 +58,8 @@ class MyPathSelector(MyPanel):
             self.pathLineEdit.setText("?")
 
     def onPathEditLineChanged(self):
-        print(">", self.pathLineEdit.displayText())
+        # print(">", self.pathLineEdit.displayText())
+        pass
 
     def onDialogButtonClicked(self):
         # Create file dialog
@@ -77,6 +82,6 @@ class MyPathSelector(MyPanel):
         if dialog.exec():
             dialogPath = dialog.selectedFiles()[0]
 
-        print(dialogPath)
+        # print(dialogPath)
         self.pathLineEdit.setText(dialogPath)
 
