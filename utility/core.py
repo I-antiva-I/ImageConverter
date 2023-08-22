@@ -5,7 +5,6 @@ from PyQt5.QtWidgets import QWidget
 
 
 def filterStings(pattern, strings):
-    print(pattern, strings)
     return filter(re.compile(pattern).match, strings)
 
 
