@@ -1,5 +1,6 @@
 /* https://stackoverflow.com/questions/10898399/using-variables-in-qt-stylesheets */
 
+/* ALL */
 *
 {
     font: @font-default;
@@ -10,6 +11,7 @@ MyPanel
 {
     background:                 @color-black-medium;
 }
+
 #MAIN_PANEL
 {
     padding:                    12px 12px 12px 12px;
@@ -64,9 +66,6 @@ MyPanelLabeled:title
 
 }
 
-
-
-
 /* Button */
 QPushButton
 {
@@ -97,34 +96,33 @@ MyCheckBox
 
 MyCheckBox[currentState="true"] MyLabel
 {
-    border: 2px solid @color-blue-light;
+    border:                     @border-medium @color-blue-light;
     background:                 @color-blue-dark;
 }
 
 MyCheckBox[currentState="true"] MyIcon
 {
-    border: 2px solid @color-blue-light;
+    border-color:               @color-blue-light;
     background:                 @color-blue-dark;
 
 }
 
 MyCheckBox[currentState="false"] MyLabel
 {
-    border: 2px solid @color-black-light;
-    background:  @color-black-dark;
-
+    border:                     @border-medium @color-black-light;
+    background:                 @color-black-dark;
 }
 
 MyCheckBox[currentState="false"] MyIcon
 {
-    border: 2px solid @color-black-light;
-        background:  @color-black-dark;
+    border-color:               @color-black-light;
+    background:                 @color-black-dark;
 }
 
 MyCheckBox MyIcon
 {
     background:                 @color-black-light;
-    border:                     2px solid @color-gray-dark;
+    border:                     @border-medium @color-gray-dark;
     border-radius:              4px;
 }
 
@@ -134,7 +132,7 @@ MyCheckBox MyLabel
     color:                      @color-white-light;
     padding:                    0px 8px;
     font:                       @font-option;
-    border:                     2px solid @color-gray-dark;
+    border:                     @border-medium @color-gray-dark;
     border-radius:              4px;
 }
 
@@ -149,96 +147,81 @@ MyFormatSelector MyLabel
 {
     background:                 @color-black-light;
     padding:                    6px 4px;
-     font:                      @font-format-label;
+    font:                       @font-format-label;
 }
 
 
 #BUTTON_CONVERT
 {
-    margin: @offset-margin 0px 0px 0px;
-    padding: 0px 24px;
-    font:      @font-convert;
+    margin:                     @offset-margin 0px 0px 0px;
+    padding:                    0px 24px;
+    font:                       @font-convert;
 }
 
 /* MyPathSelector */
 MyPathSelector MyPushButton
 {
-    min-height:         32px;
-    min-width:          80px;
+    min-height:                 32px;
+    min-width:                  80px;
 
-    font:           @font-button;
-    padding: 2px 8px;
-text-align:left;
+    font:                       @font-button;
+    padding:                    2px 8px;
 }
 
 MyPathSelector QLineEdit
 {
-    font: @font-edit;
-    padding:  0px 4px;
+    font:                       @font-edit;
+    padding:                    0px 4px;
 }
-
 
 MyStatusLabel
 {
-    font:      @font-status;
+    font:                       @font-status;
 }
 
 QComboBox
 {
-
-
-    color: @color-white-light;
-    background: @color-black-light;
-    border: none;
-
-
-change-cursor: cursor('PointingHand');
-
-       padding: 0px 8px;
+    color:                      @color-white-light;
+    background:                 @color-black-light;
+    border:                     none;
+    padding:                    0px 8px;
 }
 
 QComboBox:hover
 {
-    color: @color-white-light;
-    background: @color-blue-light;
+    color:                      @color-white-light;
+    background:                 @color-blue-light;
 
 }
-
 
 QComboBox::drop-down
 {
-border: none;
+   border:                      none;
 
-   width: 24px;
-   padding: 0px 8px;
-     color: white;
-
+   width:                       24px;
+   padding:                     0px 8px;
+   color:                       @color-white-light;
 }
-
-
-
 
 QComboBox::down-arrow
 {
-    image: url(./images/other/circle.svg);
-    width: 24px;
-    height: 24px;
+    image:                      url(./images/other/circle.svg);
 
-     color: white;
+    width:                      24px;
+    height:                     24px;
+
+    color:                      @color-white-light;
 }
 
 QComboBox QListView
 {
-    color: @color-white-light;
-    background: @color-blue-light;
+    color:                      @color-white-light;
+    background:                 @color-blue-light;
 
-  selection-color: @color-white-light;
-  selection-background-color: @color-black-light;
-  outline: none;
+    selection-color:            @color-white-light;
+    selection-background-color: @color-black-light;
+    outline: none;
 
-
-
-
-       border-top: @border-wide @color-white-light;
-              border-bottom: @border-wide @color-white-light;
+    border-top:                 @border-wide @color-white-light;
+    border-bottom:              @border-wide @color-white-light;
 }
