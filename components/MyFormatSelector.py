@@ -1,4 +1,4 @@
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QSizePolicy
 
 from .MyLabel import MyLabel
@@ -28,13 +28,17 @@ class MyFormatSelector(MyPanel):
         self.availableFormats = {}
 
         # Placement of components
-        self.place(labelOriginal,               1, 1, 1, 2)
-        self.place(self.comboBoxOriginal,       1, 3, 1, 1)
-        self.place(labelTarget,                 2, 1, 1, 2)
-        self.place(self.comboBoxTarget,         2, 3, 1, 1)
+        self.place(labelOriginal,               1, 1, 1, 3)
+        self.place(self.comboBoxOriginal,       1, 4, 1, 1)
+        self.place(labelTarget,                 2, 1, 1, 3)
+        self.place(self.comboBoxTarget,         2, 4, 1, 1)
 
         # Default state
         self.comboBoxTarget.setEnabled(False)
+
+        # Cursor shape
+        self.comboBoxTarget.setCursor(QtCore.Qt.CursorShape.PointingHandCursor)
+        self.comboBoxOriginal.setCursor(QtCore.Qt.CursorShape.PointingHandCursor)
 
     # ComboBoxOriginal functions
     def clearComboBoxOriginal(self):
