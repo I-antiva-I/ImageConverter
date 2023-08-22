@@ -1,37 +1,47 @@
 /* https://stackoverflow.com/questions/10898399/using-variables-in-qt-stylesheets */
 
-#MAIN_PANEL
+*
+{
+    font: @font-default;
+}
+
+/* Panel */
+MyPanel
 {
     background:                 @color-black-medium;
-    padding:                    12px 6px 6px 6px;
+}
+#MAIN_PANEL
+{
+    padding:                    12px 12px 12px 12px;
+}
+
+/* Panel with title (GroupBox) */
+MyPanelLabeled
+{
+    background:                 @color-black-medium;
+    border:                     @border-medium @color-black-light;
+    color:                      @color-white-light;
+
+    font:                       @font-panel-title;
+    margin:                     @offset-margin 0px 0px 0px;
+    padding:                    @offset-padding 8px 8px 8px;
 }
 
 #PANEL_OPTIONS,
 #PANEL_CONVERSION
 {
-    padding:                    20px 16px 16px 16px;
+    font:                       @font-panel-title-large;
+    margin:                     @offset-margin-large 0px 0px 0px;
+    padding:                    @offset-padding-large 12px 12px 12px;
+
 
 }
 
-
-MyPanel
+#PANEL_OPTIONS
 {
-    background:                 @color-black-medium;
-    border-top:                 none;
-    padding:                    4px 4px;
+    padding:                    @offset-padding-options 8px 8px 8px;
 }
 
-MyPanelLabeled
-{
-    background:                 @color-black-medium;
-    border:                     @border-narrow @color-black-light;
-    color:                      @color-white-light;
-
-    font:                       @font-header;
-
-    margin-top:                 12px;
-    padding:                    12px 6px 6px 6px;
-}
 
 MyPanelLabeled:title
 {
@@ -39,17 +49,27 @@ MyPanelLabeled:title
     subcontrol-position:        top left;
 
     left:                       18px;
-    top:                        -12px;
-
+    top:                        -@offset-margin;
 
     padding:                    0px 8px;
 }
 
+#PANEL_OPTIONS:title,
+#PANEL_CONVERSION:title
+{
+    left:                       18px;
+    top:                        -@offset-margin-large;
+
+    padding:                    0px 8px;
+
+}
+
+
+
+
+/* Button */
 QPushButton
 {
-    min-width:                  128px;
-    min-height:                 32px;
-
     font:                       @font-button;
 
     background:                 @color-black-light;
@@ -65,66 +85,160 @@ QPushButton:hover
 
 QPushButton:pressed
 {
-    background:                 @color-white-light;
-    color:                      @color-blue-light;
+    background:                 @color-yellow-light;
+    color:                      @color-white-light;
 }
 
-
-
+/* CheckBox */
 MyCheckBox
 {
     color:                      @color-white-light;
-
-
-    bo1rder: 1px dashed white;
 }
-
-
 
 MyCheckBox[currentState="true"] MyLabel
 {
-    border: 2px solid @color-blue-medium;
-}
-
-MyCheckBox[currentState="false"] MyLabel
-{
-    border: 2px solid @color-red-medium;
+    border: 2px solid @color-blue-light;
+    background:                 @color-blue-dark;
 }
 
 MyCheckBox[currentState="true"] MyIcon
 {
-    border: 2px solid @color-blue-medium;
+    border: 2px solid @color-blue-light;
+    background:                 @color-blue-dark;
+
+}
+
+MyCheckBox[currentState="false"] MyLabel
+{
+    border: 2px solid @color-black-light;
+    background:  @color-black-dark;
+
 }
 
 MyCheckBox[currentState="false"] MyIcon
 {
-    border: 2px solid @color-red-medium;
+    border: 2px solid @color-black-light;
+        background:  @color-black-dark;
 }
-
-
 
 MyCheckBox MyIcon
 {
     background:                 @color-black-light;
-    border :2px solid @color-gray-dark;
-    border-radius: 4px;
+    border:                     2px solid @color-gray-dark;
+    border-radius:              4px;
 }
 
 MyCheckBox MyLabel
 {
     background:                 @color-black-light;
     color:                      @color-white-light;
-    padding:                    0px 4px;
-    font:                       @font-button;
+    padding:                    0px 8px;
+    font:                       @font-option;
     border:                     2px solid @color-gray-dark;
     border-radius:              4px;
+}
+
+/* Label */
+MyLabel
+{
+    color:                      @color-white-light;
+    font:                       @font-header;
+}
+
+MyFormatSelector MyLabel
+{
+    background:                 @color-black-light;
+    padding:                    6px 4px;
+     font:                      @font-format-label;
+}
+
+
+#BUTTON_CONVERT
+{
+    margin: @offset-margin 0px 0px 0px;
+    padding: 0px 24px;
+    font:      @font-convert;
+}
+
+/* MyPathSelector */
+MyPathSelector MyPushButton
+{
+    min-height:         32px;
+    min-width:          80px;
+
+    font:           @font-button;
+    padding: 2px 8px;
+text-align:left;
+}
+
+MyPathSelector QLineEdit
+{
+    font: @font-edit;
+    padding:  0px 4px;
+}
+
+
+MyStatusLabel
+{
+    font:      @font-status;
+}
+
+QComboBox
+{
+
+
+    color: @color-white-light;
+    background: @color-black-light;
+    border: none;
+
+
+change-cursor: cursor('PointingHand');
+
+       padding: 0px 8px;
+}
+
+QComboBox:hover
+{
+    color: @color-white-light;
+    background: @color-blue-light;
 
 }
 
 
-MyLabel
+QComboBox::drop-down
 {
-    border :1px dashed @color-red-dark;
-    color:                      @color-white-light;
-    font:                       @font-header;
+border: none;
+
+   width: 24px;
+   padding: 0px 8px;
+     color: white;
+
+}
+
+
+
+
+QComboBox::down-arrow
+{
+    image: url(./images/other/circle.svg);
+    width: 24px;
+    height: 24px;
+
+     color: white;
+}
+
+QComboBox QListView
+{
+    color: @color-white-light;
+    background: @color-blue-light;
+
+  selection-color: @color-white-light;
+  selection-background-color: @color-black-light;
+  outline: none;
+
+
+
+
+       border-top: @border-wide @color-white-light;
+              border-bottom: @border-wide @color-white-light;
 }

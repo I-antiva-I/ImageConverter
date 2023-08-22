@@ -1,4 +1,5 @@
 from PyQt5 import QtWidgets
+from PyQt5.QtGui import QFont
 
 from components.MyWidgetWithLayout import MyWidgetWithLayout
 
@@ -21,4 +22,7 @@ class MyPanelLabeled(QtWidgets.QGroupBox, MyWidgetWithLayout):
         # Label (text) of the component
         if label is not None:
             self.setTitle(label)
+
+
+
 
