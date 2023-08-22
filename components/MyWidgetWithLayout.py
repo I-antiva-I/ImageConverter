@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QWidget, QGridLayout, QLayout
 # "Interface" for interacting with layout of widget
 class MyWidgetWithLayout:
     # Placement of single child widget
-    def place(self, widget, row: int = 0, column: int = 0, rowSpan: int = 1, columnSpan: int = 1):
+    def place(self: QWidget, widget, row: int = 0, column: int = 0, rowSpan: int = 1, columnSpan: int = 1):
         if isinstance(self.layout(), QLayout):
             # Grid layout
             if type(self.layout()) is QGridLayout:
