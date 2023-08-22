@@ -1,12 +1,23 @@
 {
+  "@font-panel-title-large" : "500 26px 'Bahnschrift'",
+  "@font-panel-title"       : "500 22px 'Bahnschrift'",
+  "@font-option"            : "500 18px 'Bahnschrift'",
+  "@font-format-label"      : "500 18px 'Bahnschrift'",
+  "@font-convert"           : "500 20px 'Bahnschrift'",
+  "@font-status"            : "500 20px 'Bahnschrift'",
+  "@font-button"            : "500 16px 'Bahnschrift'",
+  "@font-edit"              : "500 14px 'Bahnschrift'",
   "@font-default"           : "400 16px 'Bahnschrift'",
-  "@font-button"            : "400 16px 'Bahnschrift'",
-  "@font-header"            : "500 20px 'Bahnschrift'",
-  "@font-edit"              : "400 18px 'Bahnschrift'",
 
+  "@offset-margin-large"     : "18px",
+  "@offset-margin"           : "16px",
 
-  "@border-narrow"          : "2px SOLID",
-  "@border-medium"          : "3px SOLID",
+  "@offset-padding-options"  : "30px",
+  "@offset-padding-large"    : "14px",
+  "@offset-padding"          : "14px",
+
+  "@border-narrow"          : "1px SOLID",
+  "@border-medium"          : "2px SOLID",
   "@border-wide"            : "4px SOLID",
 
   "@color-black-dark"       : "#000000",
