@@ -1,12 +1,11 @@
 from typing import TypedDict
 
-from PyQt5.QtWidgets import QWidget
-
 from components.MyPushButton import MyPushButton
 from components.MyFormatSelector import MyFormatSelector
 from components.MyPathSelector import MyPathSelector
 from components.MyCheckBox import MyCheckBox
 from components.MyStatusLabel import MyStatusLabel
+from components.MyPanelLabeled import MyPanelLabeled
 
 
 class MainWindowComponents(TypedDict):
@@ -21,6 +20,6 @@ class MainWindowComponents(TypedDict):
     OPTION_DELETE_ORIGINALS:    MyCheckBox
     OPTION_REPLACE_CONFLICTS:   MyCheckBox
     OPTION_DIFFERENT_OUTPUT:    MyCheckBox
-    # "Convert" panels
-    PANEL_DESTINATION:          QWidget
+    # Panels
+    PANEL_DESTINATION:          MyPanelLabeled
 
