@@ -18,6 +18,9 @@ class MyPushButton(QtWidgets.QPushButton):
         self.iconPathHovered =  iconPathHovered
         self.iconPathPressed =  iconPathPressed
 
+        # Cursor shape
+        self.setCursor(QtCore.Qt.CursorShape.PointingHandCursor)
+
         # Default icon
         self.prepareIcon(iconPathDefault)
 
@@ -44,3 +47,9 @@ class MyPushButton(QtWidgets.QPushButton):
             icon = QtGui.QIcon(path)
             self.setIcon(icon)
             self.setIconSize(QtCore.QSize(24, 24))
+
+    def prepareIcon(self, path):
+        if path is not None:
+            icon = QtGui.QIcon(path)
+            self.setIcon(icon)
+            self.setIconSize(QtCore.QSize(28, 28))
