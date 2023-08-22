@@ -11,7 +11,6 @@ class MyStatusLabel(MyLabel):
     def updateLabel(self, text, statusColor: StatusLabelColor):
         self.changeText(text)
         self.changeColor(statusColor.value)
-        print(statusColor)
 
     def changeText(self, text):
         self.setText(text)

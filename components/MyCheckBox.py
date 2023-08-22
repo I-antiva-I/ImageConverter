@@ -11,7 +11,7 @@ class MyCheckBox(MyPanel):
         super(MyCheckBox, self).__init__(name, QtWidgets.QHBoxLayout())
 
         # Icon
-        self.icon = MyIcon(iconPath, 28+4+2, 4, 2)
+        self.icon = MyIcon(pathToImage=iconPath, size=28+4+2, padding=4, border=2)
         self.place(self.icon)
 
         # Label
@@ -32,7 +32,7 @@ class MyCheckBox(MyPanel):
         self.onClickFunction = None
 
     def updateIcon(self, path):
-        self.icon.updateIcon("./images/warning.ico")
+        self.icon.updateIcon(path)
 
     # Update property and recompute CSS
     def updateCurrentState(self, value):

@@ -16,7 +16,7 @@ class MyPathSelector(MyPanel):
         self.dialogMode = dialogMode
         self.dialogButton = MyPushButton(text=" Path", iconPathDefault="./images/buttons/compass")
         self.dialogButton.clicked.connect(self.onDialogButtonClicked)
-
+        # Extensions to filter
         self.nameFilterOptions = ""
 
         # Controls for line edit
@@ -58,7 +58,7 @@ class MyPathSelector(MyPanel):
             self.pathLineEdit.setText("?")
 
     def onPathEditLineChanged(self):
-        # print(">", self.pathLineEdit.displayText())
+        # Some action
         pass
 
     def onDialogButtonClicked(self):
@@ -82,6 +82,5 @@ class MyPathSelector(MyPanel):
         if dialog.exec():
             dialogPath = dialog.selectedFiles()[0]
 
-        # print(dialogPath)
         self.pathLineEdit.setText(dialogPath)
 

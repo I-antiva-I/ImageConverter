@@ -2,16 +2,15 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class MyPushButton(QtWidgets.QPushButton):
-    def __init__(self, name=None, text=None, iconPathDefault=None, iconPathHovered=None, iconPathPressed=None):
+    def __init__(self, name=None, text="My Button", iconPathDefault=None, iconPathHovered=None, iconPathPressed=None):
         super(MyPushButton, self).__init__()
 
+        # Component name
         if name is not None:
             self.setObjectName(name)
 
-        if text is None:
-            self.setText("My Button")
-        else:
-            self.setText(text)
+        # Button text
+        self.setText(text)
 
         # Paths to icons
         self.iconPathDefault =  iconPathDefault

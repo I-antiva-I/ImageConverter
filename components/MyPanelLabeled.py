@@ -1,5 +1,4 @@
 from PyQt5 import QtWidgets
-from PyQt5.QtGui import QFont
 
 from components.MyWidgetWithLayout import MyWidgetWithLayout
 
